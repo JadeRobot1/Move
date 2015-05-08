@@ -1,16 +1,25 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="20" x="-523" y="-4">
-    <next>
-      <block type="robot_delay" id="22" inline="true">
-        <value name="DELAY">
-          <block type="math_number" id="29">
-            <field name="NUM">1000</field>
-          </block>
-        </value>
+  <block type="controls_if" id="76" inline="false" x="-509" y="53">
+    <value name="IF0">
+      <block type="sensor_spectrometer" id="92">
+        <field name="LIGHT">YELLOW</field>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="movement_forward" id="20">
         <next>
-          <block type="movement_stop" id="39"></block>
+          <block type="robot_delay" id="22" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="29">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+            <next>
+              <block type="movement_stop" id="39"></block>
+            </next>
+          </block>
         </next>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>
